@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Вход</title>
+
+    <meta charset="utf-8" />
+    <title>Главная</title>
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{libs/bootstrap/bootstrap-grid-3.3.1.min.css}" />
+    <link rel="stylesheet" th:href="@{libs/font-awesome-4.2.0/css/font-awesome.min.css}" />
+    <link rel="stylesheet" th:href="@{css/fonts.css}" />
+    <link rel="stylesheet" th:href="@{css/mainW.css}" />
+    <link rel="stylesheet" th:href="@{css/mediaW.css}" />
+
+</head>
+<body>
+<!-- Include _menu.html -->
+<th:block th:include="/_menu"></th:block>
+<!-- /login?error=true -->
+<div class="center" th:if="${#request.getParameter('error') == 'true'}"
+     style="color:red;margin:10px 0px;">
+    Неверно указаны данные!
+</div>
+
+<div class="textcenter">
+    <h3>Вход/Регистрация</h3>
+</div>
+<form name='f' th:action="@{/j_spring_security_check}" method='POST'>
+    <div class = "container">
+        <div class="row">
+            <div class="col-xs-1 col-sm-4 col-md-4 col-lg-4"></div>
+            <div class=" container loginput center col-xs-10 col-sm-4 col-md-4 col-lg-4">
+                <div class="row">
+                    <div class="textcenter"><input class="input login" type="text" name='username' placeholder="Логин" required /></div>
+                    <div class="loginstripe"></div>
+                    <div class="textcenter"><input class="input password" type='password' name='password' placeholder="Пароль" required /></div>
+
+                    <div class="loginstripe col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 inputtext remember"><p>Запомнить<input class="checkbox" name="remember-me"  type="checkbox" /></p></div>
+                    <div class="textcenter"><input class="inputbutton" name="submit" type="submit" value="Войти" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" container col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="row" style="text-align: center">
+            <p><a th:href="@{/registration}" style="margin-right: 10px; font-size: 20px;">Регистрация</a></p>
+        </div>
+    </div>
+
+</form>
+
+
+
+<script href="libs/jquery/jquery-1.11.1.min.js" th:src="@{libs/jquery/jquery-1.11.1.min.js}"></script>
+<script href="js/common.js" th:src="@{js/common.js}"></script>
+</body>
+
+</html>

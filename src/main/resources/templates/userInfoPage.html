@@ -1,0 +1,78 @@
+<!DOCTYPE HTML>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Лобби</title>
+
+    <meta charset="utf-8" />
+    <title>Главная</title>
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="stylesheet" th:href="@{libs/bootstrap/bootstrap-grid-3.3.1.min.css}" />
+    <link rel="stylesheet" th:href="@{libs/font-awesome-4.2.0/css/font-awesome.min.css}" />
+    <link rel="stylesheet" th:href="@{css/fonts.css}" />
+    <link rel="stylesheet" th:href="@{css/mainW.css}" />
+    <link rel="stylesheet" th:href="@{css/mediaW.css}" />
+
+</head>
+<body>
+<!-- Include _menu.html -->
+<th:block th:include="/_menu"></th:block>
+
+<div class="mainText">
+    <p>
+        Привет <span th:utext="${userName}"></span><br/>
+        <span th:utext="${team}"></span>
+
+    </p>
+</div>
+<div class="mainText" th:if="${teammates != null}">
+    <p>Участники команды:</p>
+    <ul>
+        <li th:each="teammate : ${teammates}">
+            <span th:utext="${teammate}"></span>
+        </li>
+    </ul>
+</div>
+<div class="mainText">
+    <h2><a th:href="@{/game}">Играть!</a> </h2>
+</div>
+
+<div class="mainText" th:if="${leader != null}">
+    <p><a th:href="@{/addTeammate}">Добавить нового игрока</a> </p>
+    <p><a th:href="@{/deleteTeammate}">Удалить игрока</a> </p>
+    <p><a th:href="@{/changeLeader}">Сменить командира</a> </p>
+</div>
+
+<div class="mainText" th:if="${admin != null}">
+    <p><a th:href="@{/admin}" style="color: coral">Администрация</a> </p>
+</div>
+
+<div th:if="${inviteTeam != null}" class="mainText">
+    <p>Вы получили приглашение в команду: <span th:utext="${inviteTeam}"></span><br/>
+        <a style="color: green" th:href="@{/accept}">Принять</a> <a style="color: red" th:href="@{/deny}">Отказать</a>
+    </p>
+</div>
+<div th:if="${exit != null}" class="mainText">
+    <p>
+        <a th:href="@{/deny}" style="color: white">Выйти из команды</a>
+    </p>
+</div>
+
+<div class="mainText" th:if="${create != null}">
+    <form class="mainAnswer" name='game' th:action="@{/createTeam}" method='POST'>
+        <p>
+            Создать команду:
+        </p>
+        <input type='text' name='teamName' placeholder="Название команды" required/></td>
+        <input name="submit" type="submit" value="Создать" />
+    </form>
+</div>
+
+
+<script href="libs/jquery/jquery-1.11.1.min.js" th:src="@{libs/jquery/jquery-1.11.1.min.js}"></script>
+<script href="js/common.js" th:src="@{js/common.js}"></script>
+</body>
+
+</html>

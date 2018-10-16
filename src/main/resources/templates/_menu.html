@@ -1,0 +1,45 @@
+<header xmlns:th="http://www.thymeleaf.org" class="top_header">
+    <div class="header_topline">
+        <div class="container d1">
+            <div class="row">
+                <div class="col-sm-9 col-md-9 col-lg-9">
+						<span class="top_links hidden-xs">
+							<a class="header_lobby" th:href="@{/welcome}">Главная</a>
+                            <a class="header_lobby" th:href="@{/userInfo}">Информация</a>
+							<a class="header_game" th:href="@{/game}">Игра</a>
+							<span class="header_contacts" >+7(987)395-6662</span>
+                            <!--a class="header_vk" href="#"><i class="fa fa-vk"></i></a-->
+						</span>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <span class="top_login" th:if="${#request.userPrincipal == null}">
+                        <a class="header_login" th:href="@{/login}">Вход</a> <span class=header_login>/</span> <a class="header_login" th:href="@{/registration}">Регистрация</a>
+                    </span>
+                    <span class="top_login" th:if="${#request.userPrincipal != null}">
+                        <a class="header_login" th:href="@{/logout}">Выход</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <button class="auth_button hidden-lg hidden-md"><i class="fa fa-reorder"></i></button>
+    </div>
+    </div>
+    <div class="stripe"></div>
+
+    <div class="headerwindow hidden-lg hidden-md hidden-sm">
+        <div class="container">
+            <div class="log_row row">
+                <div class="header_window_reg log_reg">
+                    <p><a class="slogin" th:href="@{/welcome}"><i class="fa fa-star fabot"></i>Главная</a></p>
+                    <p><a class="slogin" th:href="@{/userInfo}"><i class="fa fa-user fabot"></i>Информация</a></p>
+                    <p><a class="slogin" th:href="@{/game}"><i class="fa fa-gamepad fabot"></i>Игра</a></p>
+                    <p><a class="slogin" href="tel:987-395-6662"><i class="fa fa-phone fabot"></i>Контакты</a></p>
+                    <p><a class="slogin" href="https://vk.com/unewe"><i class="fa fa-vk fabot"></i>Вконтакте</a></p>
+                    <p th:if="${#request.userPrincipal == null}"><a class="slogin" th:href="@{/login}"><i class="fa fa-sign-in fabot"></i>Вход</a></p></p>
+                    <p th:if="${#request.userPrincipal == null}"><a class="slogin" th:href="@{/registration}"><i class="fa fa-sign-in fabot"></i>Регистрация</a></p></p>
+                    <p th:if="${#request.userPrincipal != null}"><a class="slogin" th:href="@{/logout}"><i class="fa fa-sign-out fabot"></i>Выход</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

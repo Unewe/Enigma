@@ -1,0 +1,181 @@
+*::-webkit-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*:-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*::-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*:-ms-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+
+}
+body input:required:valid,
+body textarea:required:valid {
+
+}
+
+html{
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	font-family: "RobotoRegular", sans-serif;
+	font-size: 16px;
+	background: rgb(220,220,220) no-repeat;
+	background-size: 150%;
+	background-position: 60% bottom;
+}
+
+.top_header {
+	width: 100%;
+}
+
+.d1 {
+	width: 95%;
+}
+
+.header_topline {
+	background-color: #43484C;
+	width: 100%;
+	opacity: 1;
+	padding: 10px;
+	color: #fff;
+	height: 46px;
+}
+.stripe {
+	background-color: #fff;
+	height: 2px;
+}
+.header_topline a{
+	color: #fff;
+	text-decoration:underline;
+	font-weight: 500;
+
+}
+
+.top_links {
+
+}
+.top_links a{
+	margin-right: 15px;
+
+}
+.header_topline a:hover{
+	text-decoration:none;
+}
+.top_login{
+	float: right;
+}
+
+.auth_button {
+	background-color: transparent;
+	border: none;
+	font-size: 25px;
+	float:left;
+	margin-top:-7px;
+}
+.log_reg {
+	background-color: #43484C;
+}
+.log_reg a {
+	color: #fff;
+}
+.log_row {
+	padding-top:2px;
+}
+.headerwindow {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #43484C;
+	z-index: 110;
+}
+.header_window_reg p{
+	margin-top: 40px;
+	margin-left: 30px;
+}
+
+.fabot {
+	font-size: 18px;
+	color: #fff;
+	margin-right: 20px;
+}
+
+button, button:active, button:focus {
+	outline: none;
+}
+
+.mainText {
+	margin-top: 30px;
+	margin-left: 5%;
+}
+
+.toHide {
+	display: none;
+}
+
+.qwestionImg {
+	width: 90%;
+	margin-left: 5%;
+	margin-bottom: 3%;
+}
+
+.mainText {
+	margin-left: 3%;
+	margin-top: 3%;
+
+}
+
+.mainAnswer {
+	margin-left: 3%;
+	margin-bottom: 5%;
+}
+
+.teammates {
+	margin-left: 5%;
+	margin-top: 100px;
+}
+
+.center {
+	margin-top: 2%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.floatingInput {
+	z-index: 50;
+}
+
+.fixed {
+	position: fixed;
+	margin-top: -48px;
+	width: 100%;
+	background: rgb(220,220,220);
+}
+
+.answer {
+	height: 40px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: rgb(125,125,125);
+	border-radius: 6px;
+	outline: none;
+}
+
+.sendbutton {
+	height: 40px;
+	background-color: rgb(90,200,90);
+	border-radius: 6px;
+	border-color: rgb(125,125,125);
+}

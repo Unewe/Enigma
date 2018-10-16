@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Регистрация</title>
+
+    <meta charset="utf-8" />
+    <title>Главная</title>
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="stylesheet" th:href="@{libs/bootstrap/bootstrap-grid-3.3.1.min.css}" />
+    <link rel="stylesheet" th:href="@{libs/font-awesome-4.2.0/css/font-awesome.min.css}" />
+    <link rel="stylesheet" th:href="@{css/fonts.css}" />
+    <link rel="stylesheet" th:href="@{css/mainW.css}" />
+    <link rel="stylesheet" th:href="@{css/mediaW.css}" />
+
+</head>
+<body>
+<!-- Include _menu.html -->
+<th:block th:include="/_menu"></th:block>
+
+<div class="center" th:if="${#request.getParameter('error') == 'true'}"
+     style="color:red;margin:10px 0px;">
+    <h4>Пользователь с таким именем уже существует!</h4>
+</div>
+
+<div class="textcenter">
+    <h3>Регистрация</h3>
+</div>
+<form name='registration' th:action="@{/registration}" method='POST'>
+
+    <div class = "container">
+        <div class="row">
+            <div class="col-xs-1 col-sm-4 col-md-4 col-lg-4"></div>
+            <div class=" container loginput center col-xs-10 col-sm-4 col-md-4 col-lg-4">
+                <div class="row">
+                    <div class="textcenter"><input class="input login" type="text" name='username' placeholder="Логин" required autocomplete="off" /></div>
+                    <div class="loginstripe"></div>
+                    <div class="textcenter"><input class="input password" type='password' name='password' placeholder="Пароль" required autocomplete="off" /></div>
+
+                    <div class="loginstripe col-xs-12 col-sm-12 col-md-12 col-lg-12"></div>
+                    <div class="textcenter"><input class="inputbutton" name="submit" type="submit" value="Войти" /></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+    <div class="center">
+        <p>
+            После регистрации снова введите данные для входа.
+        </p>
+    </div>
+
+
+
+
+
+
+
+
+    <!--table class="center">
+        <tr>
+            <td>Пользователь:</td>
+            <td><input type='text' name='username' value='' placeholder="Team" required autofocus></td>
+        </tr>
+        <tr>
+            <td>Пароль:</td>
+            <td><input type='password' name='password' placeholder="Password" /></td>
+        </tr>
+    </table>
+    <p class="center"><input class="center" name="submit" type="submit" value="Подтвердить" /></p>
+</form>
+
+<div class="center">
+    <p>
+        После регистрации снова введите данные для входа.
+    </p>
+</div-->
+
+
+<script href="libs/jquery/jquery-1.11.1.min.js" th:src="@{libs/jquery/jquery-1.11.1.min.js}"></script>
+<script href="js/common.js" th:src="@{js/common.js}"></script>
+</body>
+
+</html>

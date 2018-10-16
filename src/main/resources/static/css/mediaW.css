@@ -1,0 +1,105 @@
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	.headerwindow {
+		display: none;
+	}
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.headerwindow {
+		display: none;
+	}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	body {
+		background: url(http://imglink.ru/pictures/04-10-18/e8ad8f6e7c647e93c15e39cdde3087ad.jpg) rgb(220,220,220) no-repeat;
+		background-size: 120%;
+		background-position: 50% 55%;
+	}
+
+	.header_login {
+		display: none;
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	body {
+		background: url(http://imglink.ru/pictures/04-10-18/e8ad8f6e7c647e93c15e39cdde3087ad.jpg) rgb(220,220,220) no-repeat;
+		background-size: 120%;
+		background-position: 50% 55%;
+	}
+
+	.header_login {
+		display: none;
+	}
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+	body {
+		background: url(http://imglink.ru/pictures/04-10-18/e8ad8f6e7c647e93c15e39cdde3087ad.jpg) rgb(220,220,220) no-repeat;
+		background-size: 120%;
+		background-position: 50% bottom;
+	}
+
+	.header_login {
+		display: none;
+	}
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	.auth_button{
+		display: none;
+	}
+	.qwestionImg {
+		width: 30%;
+		margin-left: 2%;
+		margin-bottom: 3%;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	.auth_button{
+		display: none;
+	}
+	.qwestionImg {
+		width: 30%;
+		margin-left: 2%;
+		margin-bottom: 3%;
+	}
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+	.auth_button{
+		display: none;
+	}
+	.qwestionImg {
+		width: 30%;
+		margin-left: 2%;
+		margin-bottom: 3%;
+	}
+}

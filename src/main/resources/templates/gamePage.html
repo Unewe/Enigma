@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Игра</title>
+
+    <meta charset="utf-8" />
+    <title>Главная</title>
+    <meta name="description" content="" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="stylesheet" th:href="@{libs/bootstrap/bootstrap-grid-3.3.1.min.css}" />
+    <link rel="stylesheet" th:href="@{libs/font-awesome-4.2.0/css/font-awesome.min.css}" />
+    <link rel="stylesheet" th:href="@{css/fonts.css}" />
+    <link rel="stylesheet" th:href="@{css/main.css}" />
+    <link rel="stylesheet" th:href="@{css/media.css}" />
+
+</head>
+<body>
+<!-- Include _menu.html -->
+<th:block th:include="/_menu"></th:block>
+
+<div class="hidden-lg hidden-md hidden-sm floatingInput">
+    <form name='game' th:action="@{/game}" method='POST'>
+        <input class="col-xs-10 answer" type='text' name='answer' placeholder="Ваш ответ..." required autocomplete="off"/>
+        <input class="col-xs-2 sendbutton" name="submit" type="submit" value="Ок"/>
+    </form>
+</div>
+
+
+
+<div class="mainText" >
+    <p th:utext="${question}" style="margin-top: 50px;"></p>
+</div>
+
+<div>
+    <span id="images" th:each="img : ${imgs}">
+        <img class="qwestionImg" th:src="${img.url}" alt="ooops" />
+    </span>
+</div>
+
+<div class="mainText">
+    <span id="tips" th:each="tip : ${tips}">
+        <p th:utext="${tip.tip}"></p>
+    </span>
+</div>
+
+<div class="toHide mainText">
+    <p>До следующей подсказки: <span class="timer" th:utext="${sec}">-10</span> </p>
+</div>
+
+
+<div class="hidden-xs">
+    <form class="mainAnswer" name='game' th:action="@{/game}" method='POST'>
+        <input type='text' name='answer' placeholder="Ответ" required autocomplete="off"/></td>
+        <input name="submit" type="submit" value="Подтвердить" />
+    </form>
+</div>
+<div class="hidden-lg hidden-md hidden-sm" style="height: 200px">
+
+</div>
+
+<script href="libs/jquery/jquery-1.11.1.min.js" th:src="@{libs/jquery/jquery-1.11.1.min.js}"></script>
+<script href="js/common.js" th:src="@{js/commonG.js}"></script>
+</body>
+
+</html>
