@@ -167,15 +167,13 @@ public class MainController {
 
             for(EnigmaUser user : list) {
                 if(user.getStartTime() == null) {
-
                     formList.add( new UserForm(user.getTeam(), "Еще не начал"));
-                    model.addAttribute("userlist", formList);
-                    return "gameEnded";
-                }
-                long time =(user.getQuestionTime().getTime() - user.getStartTime().getTime())/60000;
-                String stringTime = time/60 + "ч. " + time%60 + "мин.";
+                } else {
+                    long time = (user.getQuestionTime().getTime() - user.getStartTime().getTime()) / 60000;
+                    String stringTime = time / 60 + "ч. " + time % 60 + "мин.";
 
-                formList.add( new UserForm(user.getTeam(), user.getQuestion() > maxQuestion ? stringTime : "Пока играет."));
+                    formList.add(new UserForm(user.getTeam(), user.getQuestion() > maxQuestion ? stringTime : "Пока играет."));
+                }
             }
             model.addAttribute("userlist", formList);
             return "gameEnded";
